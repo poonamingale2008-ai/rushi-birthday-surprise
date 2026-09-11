@@ -1,0 +1,1952 @@
+/* =========================================================
+   RUSHI BIRTHDAY SURPRISE
+   COMPLETE STYLE.CSS
+========================================================= */
+
+
+/* =========================================================
+   GOOGLE FONT FALLBACK + RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    background: #120916;
+    color: #fff;
+}
+
+
+/* =========================================================
+   COMMON
+========================================================= */
+
+section {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+
+button {
+    font-family: "Poppins", sans-serif;
+    border: none;
+    cursor: pointer;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "DM Serif Display", serif;
+}
+
+
+/* =========================================================
+   SCREEN 1
+   WELCOME
+========================================================= */
+
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 105, 180, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(196, 91, 255, 0.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #17091c,
+            #35112e,
+            #17091c
+        );
+}
+
+
+/* Decorative glow */
+
+.welcome-section::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 94, 169, 0.12);
+
+    filter: blur(70px);
+
+    top: -150px;
+    left: -150px;
+
+    animation: glowMove 7s ease-in-out infinite alternate;
+}
+
+
+.welcome-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    border-radius: 50%;
+
+    background: rgba(161, 87, 255, 0.12);
+
+    filter: blur(70px);
+
+    bottom: -150px;
+    right: -150px;
+
+    animation: glowMove 8s ease-in-out infinite alternate-reverse;
+}
+
+
+/* =========================================================
+   WELCOME CARD
+========================================================= */
+
+.welcome-card {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(620px, 94%);
+
+    padding: 55px 40px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.12),
+            rgba(255, 255, 255, 0.04)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(18px);
+
+    animation: cardAppear 1.2s ease;
+}
+
+
+.welcome-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+
+    animation:
+        floating 3s ease-in-out infinite;
+}
+
+
+.small-text {
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    color: #ffb8da;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
+}
+
+
+.welcome-card h1 {
+    font-size: clamp(48px, 9vw, 80px);
+
+    margin-bottom: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #fff,
+            #ffb4d8,
+            #fff
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    background-size: 200% auto;
+
+    animation: shineText 4s linear infinite;
+}
+
+
+.message {
+    color: #f4dce9;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    max-width: 500px;
+
+    margin: auto;
+}
+
+
+.question {
+    margin-top: 28px;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: #ffd0e5;
+}
+
+
+.hint {
+    margin-top: 18px;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.main-button {
+    position: relative;
+
+    margin-top: 28px;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff4f9a,
+            #c44cff
+        );
+
+    box-shadow:
+        0 10px 30px rgba(255, 73, 157, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.main-button i {
+    margin-right: 8px;
+}
+
+
+.main-button:hover {
+    transform: translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 15px 40px rgba(255, 73, 157, 0.55);
+}
+
+
+.main-button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================================================
+   FLOATING HEARTS
+========================================================= */
+
+.hearts {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.hearts span {
+    position: absolute;
+
+    bottom: -60px;
+
+    color: rgba(255, 155, 204, 0.35);
+
+    font-size: 25px;
+
+    animation: heartFloat 9s linear infinite;
+}
+
+
+.hearts span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+
+.hearts span:nth-child(2) {
+    left: 15%;
+    animation-delay: 2s;
+}
+
+
+.hearts span:nth-child(3) {
+    left: 28%;
+    animation-delay: 4s;
+}
+
+
+.hearts span:nth-child(4) {
+    left: 40%;
+    animation-delay: 1s;
+}
+
+
+.hearts span:nth-child(5) {
+    left: 52%;
+    animation-delay: 3s;
+}
+
+
+.hearts span:nth-child(6) {
+    left: 65%;
+    animation-delay: 5s;
+}
+
+
+.hearts span:nth-child(7) {
+    left: 75%;
+    animation-delay: 2s;
+}
+
+
+.hearts span:nth-child(8) {
+    left: 85%;
+    animation-delay: 4s;
+}
+
+
+.hearts span:nth-child(9) {
+    left: 92%;
+    animation-delay: 1s;
+}
+
+
+.hearts span:nth-child(10) {
+    left: 35%;
+    animation-delay: 6s;
+}
+
+
+/* =========================================================
+   SCREEN 2
+   BIRTHDAY
+========================================================= */
+
+.birthday-section {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(255, 95, 171, 0.28),
+            transparent 40%
+        ),
+        linear-gradient(
+            180deg,
+            #260d26,
+            #160a19
+        );
+}
+
+
+.birthday-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(800px, 95%);
+
+    padding: 55px 35px;
+
+    text-align: center;
+
+    animation: contentAppear 1s ease;
+}
+
+
+.date {
+    color: #ffb8d9;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 15px;
+}
+
+
+.birthday-content h2 {
+    font-size: clamp(50px, 9vw, 90px);
+
+    line-height: 1;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 30px rgba(255, 100, 180, 0.3);
+}
+
+
+.birthday-content h3 {
+    font-size: clamp(38px, 7vw, 65px);
+
+    margin-top: 10px;
+
+    color: #ff9ac7;
+}
+
+
+.cake {
+    font-size: 85px;
+
+    margin: 25px 0;
+
+    animation:
+        cakeBounce 2.5s ease-in-out infinite;
+}
+
+
+.birthday-message {
+    max-width: 650px;
+
+    margin: auto;
+
+    color: #f8dce9;
+
+    line-height: 1.9;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   LOVE MESSAGE
+========================================================= */
+
+.love-message {
+    margin: 35px auto;
+
+    max-width: 600px;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 117, 177, 0.14),
+            rgba(164, 71, 255, 0.10)
+        );
+
+    border: 1px solid rgba(255, 184, 218, 0.18);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+.mini-heart {
+    font-size: 35px;
+
+    animation:
+        heartBeat 1.4s infinite;
+}
+
+
+.love-message p {
+    color: #f6dce8;
+
+    line-height: 1.8;
+
+    margin: 10px 0;
+}
+
+
+.love-message h4 {
+    font-size: 35px;
+
+    color: #ff9dca;
+
+    margin: 15px 0;
+}
+
+
+/* =========================================================
+   WISH BOX
+========================================================= */
+
+.wish-box {
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    border: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+
+.wish-box p {
+    margin: 12px 0;
+
+    color: #f4dce8;
+
+    line-height: 1.7;
+}
+
+
+.final-wish {
+    max-width: 600px;
+
+    margin: 30px auto;
+
+    color: #ffd2e6;
+
+    line-height: 1.9;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   BALLOONS
+========================================================= */
+
+.balloons {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.balloons span {
+    position: absolute;
+
+    top: 20px;
+
+    font-size: 45px;
+
+    animation:
+        balloonFloat 5s ease-in-out infinite;
+}
+
+
+.balloons span:nth-child(1) {
+    left: 5%;
+}
+
+
+.balloons span:nth-child(2) {
+    left: 22%;
+    animation-delay: 1s;
+}
+
+
+.balloons span:nth-child(3) {
+    right: 22%;
+    animation-delay: 2s;
+}
+
+
+.balloons span:nth-child(4) {
+    right: 5%;
+    animation-delay: 1.5s;
+}
+
+
+.balloons span:nth-child(5) {
+    left: 50%;
+    animation-delay: 2.5s;
+}
+
+
+/* =========================================================
+   CONFETTI
+========================================================= */
+
+.confetti-container {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.confetti-container span {
+    position: absolute;
+
+    top: -30px;
+
+    font-size: 18px;
+
+    animation:
+        confettiFall 7s linear infinite;
+}
+
+
+.confetti-container span:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
+
+
+.confetti-container span:nth-child(2) {
+    left: 18%;
+    animation-delay: 1s;
+}
+
+
+.confetti-container span:nth-child(3) {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+
+.confetti-container span:nth-child(4) {
+    left: 42%;
+    animation-delay: 0.5s;
+}
+
+
+.confetti-container span:nth-child(5) {
+    left: 55%;
+    animation-delay: 2.5s;
+}
+
+
+.confetti-container span:nth-child(6) {
+    left: 68%;
+    animation-delay: 1.5s;
+}
+
+
+.confetti-container span:nth-child(7) {
+    left: 80%;
+    animation-delay: 3s;
+}
+
+
+.confetti-container span:nth-child(8) {
+    left: 92%;
+    animation-delay: 2s;
+}
+
+
+/* =========================================================
+   SCREEN 3
+   HEART / LETTER
+========================================================= */
+
+.heart-section {
+    padding: 80px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 105, 180, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(140, 72, 255, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #180b1d,
+            #29102d,
+            #130818
+        );
+}
+
+
+.heart-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    text-align: center;
+}
+
+
+.letter-tag,
+.memory-tag {
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+    color: #ffafd3;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+}
+
+
+.heart-content > h2 {
+    font-size: clamp(45px, 8vw, 75px);
+
+    color: #fff;
+
+    margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   LETTER CARD
+========================================================= */
+
+.letter-card {
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 45px;
+
+    text-align: left;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.035)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.13);
+
+    box-shadow:
+        0 30px 70px rgba(0, 0, 0, 0.35);
+
+    backdrop-filter: blur(15px);
+
+    animation:
+        letterAppear 1.2s ease;
+}
+
+
+.letter-decoration {
+    text-align: center;
+
+    font-size: 35px;
+
+    margin-bottom: 20px;
+
+    animation:
+        heartBeat 1.8s infinite;
+}
+
+
+.letter-card p {
+    color: #f4dce8;
+
+    font-size: 15px;
+
+    line-height: 2;
+
+    margin-bottom: 22px;
+}
+
+
+.special-line {
+    text-align: center;
+
+    color: #ffadd1 !important;
+
+    font-size: 18px !important;
+
+    font-weight: 600;
+
+    padding: 20px;
+
+    border-top: 1px solid rgba(255, 170, 210, 0.15);
+
+    border-bottom: 1px solid rgba(255, 170, 210, 0.15);
+}
+
+
+.birthday-ending {
+    text-align: center;
+
+    color: #ffafd2 !important;
+
+    font-size: 25px !important;
+
+    font-family: "DM Serif Display", serif;
+}
+
+
+.signature {
+    text-align: right;
+
+    color: #dcb5cc !important;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   MEMORIES
+========================================================= */
+
+.memories-section {
+    margin-top: 90px;
+}
+
+
+.memory-heading {
+    font-size: clamp(35px, 6vw, 55px);
+
+    color: #fff;
+
+    margin-bottom: 10px;
+}
+
+
+.memory-subtitle {
+    color: #dcbfd0;
+
+    margin-bottom: 40px;
+
+    font-size: 14px;
+}
+
+
+.photo-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   PHOTO CARD
+========================================================= */
+
+.photo-card {
+    position: relative;
+
+    padding: 12px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.30);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    animation:
+        photoAppear 1s ease both;
+}
+
+
+.photo-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+
+.photo-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+
+.photo-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+
+.photo-card:hover {
+    transform:
+        translateY(-10px)
+        rotate(-1deg);
+
+    box-shadow:
+        0 30px 60px rgba(255, 82, 160, 0.20);
+}
+
+
+/* =========================================================
+   PHOTO FRAME
+========================================================= */
+
+.photo-frame {
+    width: 100%;
+
+    height: 360px;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: #241323;
+}
+
+
+.photo-frame img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    display: block;
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+
+.photo-card:hover .photo-frame img {
+    transform: scale(1.07);
+
+    filter: brightness(1.05);
+}
+
+
+/* =========================================================
+   PHOTO INFO
+========================================================= */
+
+.photo-info {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 15px 7px 8px;
+}
+
+
+.photo-number {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff5ca8,
+            #ad52e9
+        );
+
+    color: white;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.photo-caption {
+    color: #f3dce8;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+
+.memory-ending {
+    margin: 35px auto 0;
+
+    color: #e9bfd3;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SCREEN 4
+   FINAL SURPRISE
+========================================================= */
+
+.final-section {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 100vh;
+
+    padding: 60px 20px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 75, 160, 0.22),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 20% 80%,
+            rgba(139, 76, 255, 0.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #100711,
+            #250b25,
+            #100711
+        );
+}
+
+
+/* =========================================================
+   FINAL CONTENT
+========================================================= */
+
+.final-content {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(750px, 95%);
+
+    text-align: center;
+
+    padding: 45px 30px;
+
+    animation:
+        finalAppear 1.5s ease;
+}
+
+
+.final-gift {
+    font-size: 85px;
+
+    margin-bottom: 15px;
+
+    animation:
+        giftBounce 2s ease-in-out infinite;
+}
+
+
+.final-tag {
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #ffb5d8;
+
+    margin-bottom: 18px;
+}
+
+
+.final-content h2 {
+    font-size: clamp(48px, 8vw, 80px);
+
+    color: #fff;
+
+    margin-bottom: 25px;
+}
+
+
+.final-message {
+    color: #f2d8e6;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+
+    margin: 15px auto;
+
+    max-width: 600px;
+}
+
+
+/* =========================================================
+   FINAL HEART
+========================================================= */
+
+.final-heart {
+    font-size: 100px;
+
+    margin: 25px 0;
+
+    animation:
+        finalHeartPulse 1.5s ease-in-out infinite;
+
+    filter:
+        drop-shadow(
+            0 0 25px
+            rgba(255, 71, 155, 0.6)
+        );
+}
+
+
+.final-birthday {
+    font-family: "DM Serif Display", serif;
+
+    font-size: clamp(30px, 6vw, 55px);
+
+    line-height: 1.2;
+
+    color: #ffafd3;
+
+    margin: 20px 0;
+}
+
+
+.final-content h3 {
+    font-size: clamp(35px, 6vw, 55px);
+
+    color: #fff;
+
+    margin: 15px 0;
+}
+
+
+.forever-line {
+    max-width: 550px;
+
+    margin: 12px auto;
+
+    color: #e8c5d5;
+
+    line-height: 1.8;
+
+    font-size: 14px;
+}
+
+
+.final-hearts-row {
+    margin-top: 30px;
+
+    font-size: 24px;
+
+    letter-spacing: 10px;
+
+    animation:
+        rowGlow 2s ease-in-out infinite alternate;
+}
+
+
+.final-footer {
+    margin-top: 35px;
+
+    color: rgba(255, 255, 255, 0.45);
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   FINAL STARS
+========================================================= */
+
+.final-stars {
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+}
+
+
+.final-stars span {
+    position: absolute;
+
+    color: rgba(255, 196, 225, 0.65);
+
+    font-size: 20px;
+
+    animation:
+        starTwinkle 2.5s ease-in-out infinite;
+}
+
+
+.final-stars span:nth-child(1) {
+    left: 10%;
+    top: 15%;
+}
+
+
+.final-stars span:nth-child(2) {
+    left: 25%;
+    top: 30%;
+    animation-delay: 0.5s;
+}
+
+
+.final-stars span:nth-child(3) {
+    left: 75%;
+    top: 18%;
+    animation-delay: 1s;
+}
+
+
+.final-stars span:nth-child(4) {
+    right: 10%;
+    top: 35%;
+    animation-delay: 1.5s;
+}
+
+
+.final-stars span:nth-child(5) {
+    left: 15%;
+    bottom: 20%;
+    animation-delay: 0.7s;
+}
+
+
+.final-stars span:nth-child(6) {
+    left: 40%;
+    bottom: 15%;
+    animation-delay: 1.2s;
+}
+
+
+.final-stars span:nth-child(7) {
+    right: 25%;
+    bottom: 25%;
+    animation-delay: 0.3s;
+}
+
+
+.final-stars span:nth-child(8) {
+    right: 8%;
+    bottom: 15%;
+    animation-delay: 1.8s;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+
+/* Card */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(40px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* Content */
+
+@keyframes contentAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* Final */
+
+@keyframes finalAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            scale(0.85)
+            translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            scale(1)
+            translateY(0);
+    }
+
+}
+
+
+/* Letter */
+
+@keyframes letterAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(40px)
+            rotateX(10deg);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            rotateX(0);
+    }
+
+}
+
+
+/* Photos */
+
+@keyframes photoAppear {
+
+    from {
+        opacity: 0;
+        transform:
+            translateY(50px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* Floating */
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+}
+
+
+/* Heart floating */
+
+@keyframes heartFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* Glow */
+
+@keyframes glowMove {
+
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(80px, 50px);
+    }
+
+}
+
+
+/* Text */
+
+@keyframes shineText {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+
+}
+
+
+/* Cake */
+
+@keyframes cakeBounce {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(2deg);
+    }
+
+}
+
+
+/* Heart beat */
+
+@keyframes heartBeat {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    15% {
+        transform: scale(1.15);
+    }
+
+    30% {
+        transform: scale(1);
+    }
+
+    45% {
+        transform: scale(1.12);
+    }
+
+ }
+
+
+/* Balloons */
+
+@keyframes balloonFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-4deg);
+    }
+
+    50% {
+        transform:
+            translateY(20px)
+            rotate(4deg);
+    }
+
+}
+
+
+/* Confetti */
+
+@keyframes confettiFall {
+
+    0% {
+        transform:
+            translateY(-50px)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+
+}
+
+
+/* Gift */
+
+@keyframes giftBounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(-4deg);
+    }
+
+}
+
+
+/* Final heart */
+
+@keyframes finalHeartPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+}
+
+
+/* Stars */
+
+@keyframes starTwinkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.7);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+
+}
+
+
+/* Row glow */
+
+@keyframes rowGlow {
+
+    from {
+        opacity: 0.55;
+        transform: scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.04);
+    }
+
+}
+
+
+/* Screen fade */
+
+@keyframes screenFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   ACTIVE SCREEN
+========================================================= */
+
+.screen-active {
+    animation:
+        screenFadeIn 0.8s ease forwards;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #120916;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+        linear-gradient(
+            #ff5ca8,
+            #a94cff
+        );
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .welcome-card {
+        padding: 40px 22px;
+
+        border-radius: 25px;
+    }
+
+
+    .welcome-card h1 {
+        font-size: 52px;
+    }
+
+
+    .message {
+        font-size: 14px;
+    }
+
+
+    .birthday-content {
+        padding: 50px 15px;
+    }
+
+
+    .birthday-content h2 {
+        font-size: 55px;
+    }
+
+
+    .birthday-content h3 {
+        font-size: 45px;
+    }
+
+
+    .cake {
+        font-size: 65px;
+    }
+
+
+    .birthday-message {
+        font-size: 14px;
+    }
+
+
+    .love-message {
+        padding: 25px 18px;
+    }
+
+
+    .letter-card {
+        padding: 30px 22px;
+
+        border-radius: 22px;
+    }
+
+
+    .letter-card p {
+        font-size: 14px;
+
+        line-height: 1.85;
+    }
+
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+
+        max-width: 500px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+    .photo-frame {
+        height: 430px;
+    }
+
+
+    .final-content {
+        padding: 40px 15px;
+    }
+
+
+    .final-gift {
+        font-size: 65px;
+    }
+
+
+    .final-heart {
+        font-size: 75px;
+    }
+
+
+    .final-message {
+        font-size: 14px;
+    }
+
+
+    .balloons span {
+        font-size: 32px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .welcome-section,
+    .birthday-section,
+    .heart-section,
+    .final-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+
+    .welcome-card {
+        padding: 35px 18px;
+    }
+
+
+    .welcome-card h1 {
+        font-size: 45px;
+    }
+
+
+    .small-text {
+        font-size: 10px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    .question {
+        font-size: 15px;
+    }
+
+
+    .main-button {
+        padding: 13px 23px;
+
+        font-size: 13px;
+    }
+
+
+    .birthday-content h2 {
+        font-size: 45px;
+    }
+
+
+    .birthday-content h3 {
+        font-size: 38px;
+    }
+
+
+    .date {
+        letter-spacing: 3px;
+    }
+
+
+    .letter-tag,
+    .memory-tag {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .heart-content > h2 {
+        font-size: 43px;
+    }
+
+
+    .memory-heading {
+        font-size: 38px;
+    }
+
+
+    .photo-frame {
+        height: 390px;
+    }
+
+
+    .photo-card {
+        padding: 9px;
+    }
+
+
+    .final-content h2 {
+        font-size: 45px;
+    }
+
+
+    .final-birthday {
+        font-size: 32px;
+    }
+
+
+    .final-content h3 {
+        font-size: 40px;
+    }
+
+
+    .forever-line {
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+
+        transition-duration: 0.01ms !important;
+    }
+
+}
